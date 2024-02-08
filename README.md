@@ -1,7 +1,9 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/_f3zpQOh)
 # Django Practice Assessment
 
-__Name:__
+__Name:Kathleen O'Donovan
 
-__Computing ID:__
+__Computing ID: zsx4ey
+
+P.S. all of my code is on the master branch instead of the main branch I don't really know how that happened.
 
