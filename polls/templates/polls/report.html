@@ -6,11 +6,14 @@
         </h1></legend>
         {% if error_message %}
         <p><strong>
-            {{ error_message}} }}
+            {{ error_message }}
         </strong></p>
         {% endif %}
-        <input type="text" name="question_id" id="question_id" value="{{ question.id  }}"><br>
+        <label>Question ID: </label>
+        <input readonly type="text" name="question_id" id="question_id" value="{{ question.id  }}"><br>
+        <label>Please enter your name: </label>
         <input type="text" name="name" id="name" placeholder="name"><br>
+        <label>Please enter your issue with the poll: </label>
         <input type="text" name="input" id="input" placeholder="input">
 
 

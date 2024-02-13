@@ -37,7 +37,21 @@ class SubmitView(generic.DetailView):
     template_name = "polls/submitted.html"
 def submitReport(request, question_id):
     #template_name = "polls/report.html"
-    return HttpResponseRedirect(reverse("polls:submitted", args=(question_id,)))
+    #return HttpResponseRedirect(reverse("polls:submitted", args=(question_id,)))
+
+    questionId = request.POST.get("question_id")
+
+    #Get values from Post data
+    question = get_object_or_404(Question, pk=question_id)
+    name = request.POST.get("name")
+    input = request.POST.get("input")
+    if not name or not input:
+        return render(request, "polls/report.html", {"question": question, "error_message": "Please fill out all fields"})
+        #return HttpResponseRedirect(reverse("polls:submitted", args=(question_id,title)))
+
+    else:
+        return HttpResponseRedirect(reverse("polls:submitted", args=(question_id,)))
+
 
 
 def vote(request, question_id):
