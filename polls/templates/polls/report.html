@@ -1,1 +1,19 @@
-Hello
+<form action = "{% url 'polls:submitReport' question.id %}" method ="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend><h1>
+            Reporting on poll for question {{ question.id }}
+        </h1></legend>
+        {% if error_message %}
+        <p><strong>
+            {{ error_message}} }}
+        </strong></p>
+        {% endif %}
+        <input type="text" name="question_id" id="question_id" value="{{ question.id  }}"><br>
+        <input type="text" name="name" id="name" placeholder="name"><br>
+        <input type="text" name="input" id="input" placeholder="input">
+
+
+    </fieldset>
+<input type="submit" value="Submit">
+</form>

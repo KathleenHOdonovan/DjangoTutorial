@@ -32,9 +32,9 @@ class ReportView(generic.DetailView):
     model = Question
     template_name = "polls/report.html"
 
-# def report(request, question_id):
-#     #template_name = "polls/report.html"
-#     return HttpResponseRedirect(reverse("polls:report", args=(question_id,)))
+def submitReport(request, question_id):
+    #template_name = "polls/report.html"
+    return HttpResponseRedirect(reverse("polls:detail", args=(question_id,)))
 
 
 def vote(request, question_id):
