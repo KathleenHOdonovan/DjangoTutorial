@@ -28,6 +28,14 @@ class DetailView(generic.DetailView):
 class ResultsView(generic.DetailView):
     model = Question
     template_name = "polls/results.html"
+class ReportView(generic.DetailView):
+    model = Question
+    template_name = "polls/report.html"
+
+# def report(request, question_id):
+#     #template_name = "polls/report.html"
+#     return HttpResponseRedirect(reverse("polls:report", args=(question_id,)))
+
 
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
