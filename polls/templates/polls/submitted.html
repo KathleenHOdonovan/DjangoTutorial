@@ -7,14 +7,13 @@
 {% bootstrap_messages %}
 
 <div class="container-fluid p-4">
-    <h1>Thank you for submitting a report for poll {{ question.id }}</h1>
+    <h1>Thank you for submitting a report for poll {{ report_list.0.question_id }} </h1>
     <br>
     <a href = "/polls/">Back to Home</a>
 
     <table class="table table-bordered">
     <thead>
         <tr>
-            <th>question id</th>
             <th>name</th>
             <th>input</th>
         </tr>
@@ -22,7 +21,6 @@
     {% if report_list %}
         {% for report in report_list %}
     <tr>
-        <th>{{ report.question.id }}</th>
         <th>{{ report.name}}</th>
         <th>{{ report.input}}</th>
     </tr>
