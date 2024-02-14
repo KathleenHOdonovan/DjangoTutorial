@@ -1,4 +1,12 @@
-<form action = "{% url 'polls:submitReport' question.id %}" method ="post">
+{# load the tag library #}
+{% load bootstrap5 %}
+{# load css and javascript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{# display dijango.contrib.messages as bootstrap alerts #}
+{% bootstrap_messages %}
+
+<form action = "{% url 'polls:submitReport' question.id %}" method ="post" class="container-fluid">
     {% csrf_token %}
     <fieldset>
         <legend><h1>
@@ -19,4 +27,5 @@
 
     </fieldset>
 <input type="submit" value="Submit">
+<a href = "/polls/{{ question.id }}/">Back</a>
 </form>

@@ -1,3 +1,14 @@
-<h1>Thank you for submitting a report for poll {{ question.id }}</h1>
-<br>
-<a href = "/polls/">Back to Home</a>
+{# load the tag library #}
+{% load bootstrap5 %}
+{# load css and javascript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{# display dijango.contrib.messages as bootstrap alerts #}
+{% bootstrap_messages %}
+
+<div class="container-fluid p-4">
+    <h1>Thank you for submitting a report for poll {{ question.id }}</h1>
+    <br>
+    <a href = "/polls/">Back to Home</a>
+</div>
+

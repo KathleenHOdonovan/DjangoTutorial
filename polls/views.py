@@ -7,6 +7,7 @@ from django.utils import timezone
 
 # from django.django.http.response import HttpResponseRedirect
 from .models import Question, Choice
+from django import forms
 
 
 # Create your views here.
@@ -20,9 +21,11 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Question
     template_name = "polls/detail.html"
+
     def get_queryset(self):
         """Return the last five published questions"""
         return Question.objects.filter(pub_date__lte=timezone.now())
+
 
 
 class ResultsView(generic.DetailView):
