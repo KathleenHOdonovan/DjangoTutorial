@@ -1,9 +1,35 @@
-<h1>{{ question.question_text }}</h1>
+{# load the tag library #}
+{% load bootstrap5 %}
+{# load css and javascript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{# display dijango.contrib.messages as bootstrap alerts #}
+{% bootstrap_messages %}
 
-<ul>
+
+<div class="mt-4 p-5 bg-light text-black rounded text-center">
+            <h1>{{ question.question_text }}</h1>
+            <a class="text-black" href = "/polls/">Back to Home</a><br>
+        </div>
+
+
+{# <ul> #}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Answer</th>
+            <th>Votes</th>
+        </tr>
+    </thead>
 {% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+    <tr>
+        <th>{{ choice.choice_text }}</th>
+        <th>{{ choice.votes }} vote{{ choice.votes|pluralize }}</th>
+    </tr>
 {% endfor %}
-</ul>
+</table>
 
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+    {# </ul> #}
+<div class="text-center">
+    <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+</div>

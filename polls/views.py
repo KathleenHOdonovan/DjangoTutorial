@@ -6,7 +6,7 @@ from django.views import generic
 from django.utils import timezone
 
 # from django.django.http.response import HttpResponseRedirect
-from .models import Question, Choice
+from .models import Question, Choice, Report
 from django import forms
 
 
@@ -38,6 +38,14 @@ class ReportView(generic.DetailView):
 class SubmitView(generic.DetailView):
     model = Question
     template_name = "polls/submitted.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        question_id = self.kwargs['pk']
+        context['report_list'] = Report.objects.filter(question_id=question_id)
+        return context
+
+    def get_queryset(self):
+        return Report.objects.all()
 def submitReport(request, question_id):
     #template_name = "polls/report.html"
     #return HttpResponseRedirect(reverse("polls:submitted", args=(question_id,)))
@@ -53,6 +61,8 @@ def submitReport(request, question_id):
         #return HttpResponseRedirect(reverse("polls:submitted", args=(question_id,title)))
 
     else:
+        report = Report.objects.create(question=question, name=name, input=input)
+        report.save()
         return HttpResponseRedirect(reverse("polls:submitted", args=(question_id,)))
 
 

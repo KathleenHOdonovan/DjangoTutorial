@@ -10,5 +10,25 @@
     <h1>Thank you for submitting a report for poll {{ question.id }}</h1>
     <br>
     <a href = "/polls/">Back to Home</a>
+
+    <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>question id</th>
+            <th>name</th>
+            <th>input</th>
+        </tr>
+    </thead>
+    {% if report_list %}
+        {% for report in report_list %}
+    <tr>
+        <th>{{ report.question.id }}</th>
+        <th>{{ report.name}}</th>
+        <th>{{ report.input}}</th>
+    </tr>
+{% endfor %}
+    {% endif %}
+
+</table>
 </div>
 

@@ -30,3 +30,5 @@ class Report(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     input = models.TextField()
+    def __str__(self):
+        return "ID: " + str(self.question_id) + " Name:" + self.name + " Input:" +self.input

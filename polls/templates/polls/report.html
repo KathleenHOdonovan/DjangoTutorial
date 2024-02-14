@@ -9,23 +9,31 @@
 <form action = "{% url 'polls:submitReport' question.id %}" method ="post" class="container-fluid">
     {% csrf_token %}
     <fieldset>
-        <legend><h1>
+    <div class="mt-4 p-5 bg-light text-black rounded text-center">
+            <h1>
             Reporting on poll for question {{ question.id }}
-        </h1></legend>
-        {% if error_message %}
-        <p><strong>
-            {{ error_message }}
-        </strong></p>
-        {% endif %}
-        <label>Question ID: </label>
-        <input readonly type="text" name="question_id" id="question_id" value="{{ question.id  }}"><br>
-        <label>Please enter your name: </label>
-        <input type="text" name="name" id="name" placeholder="name"><br>
-        <label>Please enter your issue with the poll: </label>
-        <input type="text" name="input" id="input" placeholder="input">
+            </h1>
+            <a class="text-black" href = "/polls/">Back to Home</a><br>
+        </div>
+        <div class="text-center">
+            {% if error_message %}
+            <p><strong>
+                {{ error_message }}
+            </strong></p>
+            {% endif %}
+            <label>Question ID: </label><br>
+            <input readonly type="text" name="question_id" id="question_id" value="{{ question.id  }}"><br>
+            <label>Please enter your name: </label><br>
+            <input type="text" name="name" id="name" placeholder="name"><br>
+            <label>Please enter your issue with the poll: </label><br>
+            <input type="text" name="input" id="input" placeholder="input">
+        </div>
+
 
 
     </fieldset>
-<input type="submit" value="Submit">
-<a href = "/polls/{{ question.id }}/">Back</a>
+<div class="text-center">
+    <br><input type="submit" value="Submit" class="btn btn-primary">
+    <a href = "/polls/{{ question.id }}/">Back</a>
+</div>
 </form>
