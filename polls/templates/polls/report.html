@@ -9,7 +9,7 @@
 <form action = "{% url 'polls:submitReport' question.id %}" method ="post" class="container-fluid">
     {% csrf_token %}
     <fieldset>
-    <div class="mt-4 p-5 bg-light text-black rounded text-center">
+    <div class="mt-4 p-5 bg-info text-black rounded text-center">
             <h1>
             Reporting on poll for question {{ question.id }}
             </h1>
@@ -37,3 +37,8 @@
     <a href = "/polls/{{ question.id }}/">Back</a>
 </div>
 </form>
+<footer id="sticky-footer" class="fixed-bottom py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; Django Tutorial <br> Author: Kathleen O'Donovan</small>
+    </div>
+  </footer>

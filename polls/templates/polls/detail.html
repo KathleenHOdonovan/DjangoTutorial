@@ -10,7 +10,7 @@
 <form action = "{% url 'polls:vote' question.id %}" method ="post">
     {% csrf_token %}
     <fieldset>
-        <div class="mt-4 p-5 bg-light text-black rounded text-center">
+        <div class="mt-4 p-5 bg-info text-black rounded text-center">
             <h1>
             {{ question.question_text }}
             </h1>
@@ -36,3 +36,8 @@
     </form>
 
 </div>
+<footer id="sticky-footer" class="fixed-bottom py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; Django Tutorial <br> Author: Kathleen O'Donovan</small>
+    </div>
+  </footer>

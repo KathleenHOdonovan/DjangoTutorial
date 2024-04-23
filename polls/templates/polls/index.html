@@ -15,7 +15,7 @@
 {# <link rel="stylesheet" href="{% static 'polls/style.css' %}"> #}
 
     {% if latest_question_list %}
-    <ul class="nav nav-pills">
+    <ul class="nav nav-pills bg-light">
         {% for question in latest_question_list %}
         <li class="nav-item"><a class="nav-link" href = "{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
         {% endfor %}
@@ -24,3 +24,9 @@
     <p>No polls are available.</p>
 {% endif %}
 </div>
+<img src = "{% static 'polls/images/background.png' %}" class="rounded" alt="space">
+<footer id="sticky-footer" class="fixed-bottom py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; Django Tutorial <br> Author: Kathleen O'Donovan</small>
+    </div>
+  </footer>

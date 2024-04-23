@@ -9,5 +9,4 @@ __Computing ID: zsx4ey
 Sources:
 https://www.w3schools.com/html/html_forms.asp
 https://www.w3schools.com/django/django_add_bootstrap5.php
-cs.virginia.edu/venkat/classes/cs4501/sp24/
 

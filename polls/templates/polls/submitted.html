@@ -6,10 +6,13 @@
 {# display dijango.contrib.messages as bootstrap alerts #}
 {% bootstrap_messages %}
 
-<div class="container-fluid p-4">
-    <h1>Thank you for submitting a report for poll {{ report_list.0.question_id }} </h1>
-    <br>
-    <a href = "/polls/">Back to Home</a>
+<div class="container-fluid">
+    <div class="mt-4 p-5 bg-info text-black rounded text-center">
+        <h1 >Thank you for submitting a report for poll {{ report_list.0.question_id }} </h1>
+        <br>
+        <a href = "/polls/">Back to Home</a>
+    </div>
+
 
     <table class="table table-bordered">
     <thead>
@@ -29,4 +32,9 @@
 
 </table>
 </div>
+<footer id="sticky-footer" class="fixed-bottom py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; Django Tutorial <br> Author: Kathleen O'Donovan</small>
+    </div>
+  </footer>
 
