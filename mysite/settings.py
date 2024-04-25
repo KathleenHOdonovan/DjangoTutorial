@@ -34,12 +34,12 @@ INSTALLED_APPS = [
     "polls.apps.PollsConfig",
     'django.contrib.admin',
     'django.contrib.auth',
-    'bootstrap5',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "debug_toolbar",
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
