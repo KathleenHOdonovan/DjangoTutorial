@@ -1,12 +1,32 @@
-{% load static %}
-<link rel="stylesheet" href="{% static 'polls/style.css' %}">
+{# load the tag library #}
+{% load bootstrap5 %}
+{# load css and javascript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{# display dijango.contrib.messages as bootstrap alerts #}
+{% bootstrap_messages %}
 
-{% if latest_question_list %}
-    <ul>
+
+{% load static %}
+<div class="container-fluid ">
+<div class="mt-4 p-5 bg-primary text-white rounded text-center">
+    <h1>---Polls---</h1>
+</div>
+{# <link rel="stylesheet" href="{% static 'polls/style.css' %}"> #}
+
+    {% if latest_question_list %}
+    <ul class="nav nav-pills bg-light">
         {% for question in latest_question_list %}
-        <li><a href = "{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        <li class="nav-item"><a class="nav-link" href = "{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
         {% endfor %}
     </ul>
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+</div>
+<img src = "{% static 'polls/images/background.png' %}" class="rounded" alt="space">
+<footer id="sticky-footer" class="fixed-bottom py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; Django Tutorial <br> Author: Kathleen O'Donovan</small>
+    </div>
+  </footer>
